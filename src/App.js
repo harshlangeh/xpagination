@@ -35,7 +35,7 @@ function App() {
         setData(dataResponse);
         console.log("Data=>",data);
       } catch (error) {
-        console.log(error)
+        alert(error)
       }
       
     };
