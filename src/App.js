@@ -28,9 +28,9 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json');
-        // if (!response.ok) {
-        //   throw new Error('Fail to fetch data');
-        // }
+        if (!response.ok) {
+          throw new Error('Fail to fetch data');
+        }
         const dataResponse = await response.json();
         setData(dataResponse);
         console.log("Data=>",data);
