@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = Math.ceil(data.length/itemsPerPage)
@@ -35,6 +36,7 @@ function App() {
         setData(dataResponse);
         console.log("Data=>",data);
       } catch (error) {
+        setError(error.message)
         alert(error)
       }
       
