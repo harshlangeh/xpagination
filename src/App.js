@@ -46,27 +46,36 @@ function App() {
 
   return (
     <div >
-      <h1 className="App">Employee Data Table</h1>
-      <div className='header'>
-      <h1 style={{margin: '1px', padding: '3px'}}>ID</h1>
-        <h1 style={{margin: '1px', padding: '3px'}}>Name</h1>
-        <h1 style={{margin: '1px', padding: '3px'}}>Email</h1>
-        <h1 style={{margin: '1px', padding: '3px'}}>Role</h1>
+      <table>
+        <thead>
+          <tr><h1 style={{textAlign: 'center'}}>Employee Data Table</h1></tr>
+          <tr style={{textAlign: 'center'}}>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
 
-      </div>
-     {displayData.map((items, index)=> (
-      <div key={items.id} className='table'>
-        <h1 style={{margin: '4px'}}>{items.id}</h1>
-        <h1 style={{margin: '4px'}}>{items.name}</h1>
-        <h1 style={{margin: '4px'}}>{items.email}</h1>
-        <h1 style={{margin: '4px'}}>{items.role}</h1>
-      </div>
-     ))}
-     <div>
+        {displayData.map((items)=> (
+      <tr key={items.id} className=''>
+        <td>{items.id}</td>
+        <td>{items.name}</td>
+        <td>{items.email}</td>
+        <td>{items.role}</td>
+      </tr>
+     ))}   
+          
+        </tbody>
+      </table>
+
+      <div>
       <button onClick={handleClickPrevious}>Previous</button>
       <button disabled>{currentPage}</button>
       <button onClick={handleClickNext}>Next</button>
      </div>
+     
     </div>
   );
 }
