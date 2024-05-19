@@ -45,6 +45,11 @@ function App() {
   },[]);
 
 
+  if (error) {
+    return <div role="alert">Error: {error}</div>;
+  }
+
+
 
   return (
     <div >
